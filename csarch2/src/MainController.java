@@ -10,7 +10,6 @@ import java.awt.datatransfer.Clipboard;
 public class MainController implements ActionListener
 {
     private MainGUI GUI;
-    //private String hexadecimal;
     // inputs
     private static String sign; //first text box
     private static String exponent; //second text box
@@ -112,9 +111,14 @@ public class MainController implements ActionListener
         if(e.getSource() == GUI.getConvertButton())
         {
             //Get input
-            binary = GUI.getinputBinary_textField().getText(); // KEEP, add another like this but "Hexadecimal"
-
-            hexadecimal = GUI.getInputHexadecimal_textField().getText(); // added hexadecimal line
+            hexadecimal = GUI.getInputHexadecimal_textField().getText(); //for Hex input
+            
+            //sign = GUI.getsign_textField().getText(); <------remove '//' later once were ready to test gui
+            //exponent = GUI.getexponent_representation_textField().getText(); <------remove '//' later once were ready to test gui
+            //NOTE: this code above ^ gets the exponent representation and not the exponent.
+            binary = GUI.getinputBinary_textField().getText(); 
+            
+            
             System.out.printf("Sign: %s\n", sign);
             System.out.printf("Binary: %s\n", binary);
             System.out.printf("Exponent: %s\n", exponent);
@@ -156,7 +160,7 @@ public class MainController implements ActionListener
                 }
             }
 
-            //Dunno whats happening here
+ 
             System.out.printf("counter(add to exponent): %d\n", ctr);
             String binary = String.format("%.15f", float_binary);
             int j = binary.length();
